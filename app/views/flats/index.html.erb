@@ -1,0 +1,17 @@
+<h1>All our flats (<%= @flats.count %>)</h1>
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-xs-3">
+      <div class="card">
+        <h4><%= flat.name %></h4>
+        <p><%= flat.address %></p>
+        <p>Nber of persons: <%=flat.number_of_guests%></p>
+        <p>Price: <%=flat.price_per_night%></p>
+        <p><%= link_to 'See details', flat_path(flat) %></p>
+        <p><%= link_to 'Remove', flat_path(flat), method: :delete %></li></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
